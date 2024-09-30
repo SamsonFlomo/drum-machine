@@ -12,25 +12,31 @@ const useAudioClip = AudioClip;
 function Controls () {
   return (
     
-    <div className="controls-container">
+    <div id="controls-container" className="flex-box">
         
-        <div className="control">
-           <p>Power</p>
-           <div className="select">
-             <div className="inner"></div>
-           </div>
-        </div>
-        
-        <p id="display">&nbsp;</p>
         
         <div className="volume-slider"><input max="1" min="0" step="0.01" type="range" value="0.5" /></div> 
         
-        <div class="control">
-           <p>Bank</p>
-           <div className="select">
-             <div className="inner" ></div>
+        
+          <p id="display" className="flex-box">&nbsp;</p>
+        
+        
+           <div id="control-wrapper">
+              <div className="control" >
+                <span>Power</span>
+                <div className="select">
+                  <div className="switch"></div>
+                </div>
+              </div>
+              
+              <div className="control" >
+                <span>Bank</span>
+                <div className="select">
+                  <div className="switch"></div>
+                </div>
+              </div>
            </div>
-        </div> 
+         
         
     </div>
     )
@@ -61,10 +67,10 @@ function App() {
   return (
     <div className="App">
     
-      <h1>Get Your Sound Together!</h1>
+      <h1 className="standout">Get Your Sound Together!</h1>
       
-      <div id="drum-machine">
-        <div id="drum-pad-container">
+      <div id="drum-machine" className="flex-box">
+        <div id="drum-pad-container" >
         {
           useAudioClip.map((clip) => (
             <Drum clip={clip} key={clip.keyTrigger} />
@@ -76,6 +82,10 @@ function App() {
         <Controls />
      
       </div>
+      
+      <footer className="standout">
+        <address>BY: SAMSON</address>
+      </footer>
 
     </div>
   );

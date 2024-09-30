@@ -1,3 +1,166 @@
+:root {
+  --primary-color: #2196f3;
+  --light-primary-color: #bbdefb;
+  --dark-primary-color: #1976d2;
+  --secondary-color: #1759a8;
+  --dark-secondary-color: #113d76;
+  --accent: #536dfe;
+  --primary-txt: #000000;
+  --secondary-txt: #757575;
+  --divider: #bdbdbd;
+  --standout-color: #cf60ea;
+  --standout-font: "Almendra SC", sans-serif;
+  --background-color: #ffffff;
+}
+
+
 .App {
   text-align: center;
 }
+
+.standout {
+  text-shadow: 2px 2px 4px rgba(207, 96, 234, 0.5);
+  font-family: var(--standout-font);
+   color: --var(--primary-txt);
+}
+
+h1 {
+  padding: .5rem;
+  margin: 1.5rem; 
+}
+
+
+
+.flex-box {
+  display: flex;
+  place-items: center;
+}
+
+#drum-machine {
+  margin: auto;
+  width: 90vw;
+  padding: 5% 0;
+  height: 70vh;
+  border: 5px solid var(--standout-color);
+  background-color: var(--light-primary-color);
+  flex-direction: column;
+  gap: 10%;
+  margin-bottom: 2rem;
+}
+
+#drum-pad-container {
+  width: 90%;
+  height: 50%;
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+  padding: 1rem;
+}
+
+#drum-pad-container button {
+  background-color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--background-color);
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+
+#controls-container {
+  width: 90%;
+  height: 45%;
+  background-color: var(--standout-color);
+  padding: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.volume-slider {
+  width: 100%;
+}
+
+.volume-slider input {
+  width: 100%;
+}
+
+#display {
+  width: 100%;
+  height: 30%;
+  background-color: var(--accent);
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+#control-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.control {
+  text-align: center;
+  width: 30%;
+}
+
+.control span {
+  font-weight: bold;
+  
+  
+}
+
+.control .select {
+  width: 100%;
+  background-color: var(--accent); 
+}
+
+.control .switch {
+  width: 50%;
+  height: 2rem;
+  background-color: var(--primary-txt); 
+}
+
+footer {
+  width: 100vw;
+  align-text: center;
+  margin-top: 1.5rem;
+  font-family: var(--standout-font);
+  font-weight: bold;
+}
+
+
+@media screen and (min-width: 700px) {
+
+  #drum-machine {
+  width: 65vw;
+  height: 35vw;
+  padding: 5%;
+  flex-direction: row;
+  gap: 9%;
+  }
+  
+  #drum-pad-container {
+  width: 50%;
+  height: 90%;
+  gap: 2%; 
+  }
+  
+  #controls-container {
+  width: 50%;
+  height: 90%;
+  }
+  
+  #drum-pad-container button {
+  font-size: 1.3rem;
+
+}
+  
+}
+
+
+
+
+
