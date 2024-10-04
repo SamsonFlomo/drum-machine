@@ -3,41 +3,43 @@ import logo from "./logo.svg";
 import "./App.css";
 import { AudioClip } from "./types";
 import Drum from "./drum";
-import { playAudio } from './utils';
+import { playAudio, switchBtn, sliderBtn } from './utils';
 
 const useAudioClip = AudioClip;
 
 
 
 function Controls () {
+
+
   return (
-    
+
     <div id="controls-container" className="flex-box">
-        
-        
-        <div className="volume-slider"><input max="1" min="0" step="0.01" type="range" value="0.5" /></div> 
-        
-        
+
+
+        <div className="volume-slider"><input max="1" min="0" step="0.01" type="range" value="0.5" /></div>
+
+
           <p id="display" className="flex-box">&nbsp;</p>
-        
-        
+
+
            <div id="control-wrapper">
               <div className="control" >
                 <span>Power</span>
-                <div className="select">
-                  <div className="switch"></div>
-                </div>
+                <button className="select" >
+                  <div className="switch" id="power"></div>
+                </button>
               </div>
-              
-              <div className="control" >
+
+              <div className="control">
                 <span>Bank</span>
-                <div className="select">
+                <button className="select" >
                   <div className="switch"></div>
-                </div>
+                </button>
               </div>
            </div>
-         
-        
+
+
     </div>
     )
 };
@@ -47,16 +49,18 @@ function Controls () {
 function App() {
   useEffect(() => {
       document.addEventListener("keydown", handleKeyDown);
-      
+      switchBtn();
+      sliderBtn();
+
       return () => {
         document.removeEventListener("keydown", handleKeyDown);
       };
     },[]);
-    
+
     const handleKeyDown = (e) => {
         const pressedKey = e.key.toUpperCase();
         const matchedClip = useAudioClip.find((clip) => pressedKey === clip.keyTrigger);
-        
+
         if(matchedClip) {
           playAudio(matchedClip);
           document.getElementById("drum-" + matchedClip.keyTrigger)?.focus();
@@ -66,23 +70,23 @@ function App() {
 
   return (
     <div className="App">
-    
+
       <h1 className="standout">Get Your Sound Together!</h1>
-      
+
       <div id="drum-machine" className="flex-box">
         <div id="drum-pad-container" >
         {
           useAudioClip.map((clip) => (
             <Drum clip={clip} key={clip.keyTrigger} />
           ))
-        }   
+        }
         </div>
-        
-        
+
+
         <Controls />
-     
+
       </div>
-      
+
       <footer className="standout">
         <address>BY: SAMSON</address>
       </footer>

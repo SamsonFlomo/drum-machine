@@ -83,6 +83,7 @@ h1 {
 
 .volume-slider input {
   width: 100%;
+  cursor: pointer;
 }
 
 #display {
@@ -108,19 +109,21 @@ h1 {
 
 .control span {
   font-weight: bold;
-  
-  
 }
 
 .control .select {
   width: 100%;
-  background-color: var(--accent); 
+  border: none;
+  background-color: var(--accent);
+  cursor: pointer;
+  padding: 5%;
 }
 
 .control .switch {
   width: 50%;
   height: 2rem;
-  background-color: var(--primary-txt); 
+  background-color: var(--primary-txt);
+  float: right;
 }
 
 footer {
