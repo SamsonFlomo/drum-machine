@@ -1,6 +1,6 @@
 const playAudio = clip => {
     const powerBtn = document.getElementById("power");
-    powerBtn.style.float === "right";
+    powerBtn.style.float = "right";
 
 
     if(powerBtn.style.float === "right"){
