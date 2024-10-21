@@ -49,6 +49,8 @@ function Controls () {
 function App() {
   useEffect(() => {
       document.addEventListener("keydown", handleKeyDown);
+      const powerBtn = document.getElementById("power");
+      powerBtn.style.float = "left";
       switchBtn();
       sliderBtn();
 
@@ -60,6 +62,7 @@ function App() {
     const handleKeyDown = (e) => {
         const pressedKey = e.key.toUpperCase();
         const matchedClip = useAudioClip.find((clip) => pressedKey === clip.keyTrigger);
+        
 
         if(matchedClip) {
           playAudio(matchedClip);

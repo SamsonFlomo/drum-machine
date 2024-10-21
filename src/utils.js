@@ -1,6 +1,5 @@
 const playAudio = clip => {
     const powerBtn = document.getElementById("power");
-    powerBtn.style.float = "right";
 
 
     if(powerBtn.style.float === "right"){
@@ -9,7 +8,7 @@ const playAudio = clip => {
       document.getElementById("display").innerHTML = clip.discription;
     } else {
       document.getElementById("display").innerHTML = "";
-      alert(`Please turn on first by clicking the Power button.`);
+      alert(`Please click the power button to turn-on.`);
     };
     
     return;
